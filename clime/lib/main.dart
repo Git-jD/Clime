@@ -19,14 +19,8 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.green[800],
       ),
       body: Center(
-        child: Text(
-          'Hello users',
-          style: TextStyle(
-              fontSize: 20.0,
-              fontFamily: 'Hind',
-              fontWeight: FontWeight.bold,
-              color: Colors.grey[600]
-          ),
+        child: Image(
+          image: NetworkImage('https://images.unsplash.com/photo-1502581827181-9cf3c3ee0106?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=721&q=80'),
         ),
       ),
       floatingActionButton: FloatingActionButton(
