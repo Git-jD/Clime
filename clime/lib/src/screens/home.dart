@@ -19,7 +19,7 @@ class _HomeState extends State<Home> {
               children: <Widget>[
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text("What would you like to eat?",
+                  child: Text("What would you like to eat? hahahaha",
                       style: TextStyle(fontSize: 18)),
                 ),
                 Stack(

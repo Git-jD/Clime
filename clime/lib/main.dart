@@ -2,21 +2,39 @@ import 'package:flutter/material.dart';
 import './src/screens/home.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MaterialApp(
+    home:Home()
+  ));
 }
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
+class Home extends StatelessWidget {
+   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Clime',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+    return Scaffold (
+      appBar: AppBar (
+        title: Text(
+          'my first app',
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.green[800],
       ),
-      home: Home(),
+      body: Center(
+        child: Text(
+          'Hello users',
+          style: TextStyle(
+              fontSize: 20.0,
+              fontFamily: 'Hind',
+              fontWeight: FontWeight.bold,
+              color: Colors.grey[600]
+          ),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Text('click'),
+        backgroundColor: Colors.green[800],
+      ),
     );
   }
 }
+
