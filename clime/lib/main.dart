@@ -2,16 +2,14 @@ import 'package:flutter/material.dart';
 import './src/screens/home.dart';
 
 void main() {
-  runApp(MaterialApp(
-    home:Home()
-  ));
+  runApp(MaterialApp(home: Home()));
 }
 
 class Home extends StatelessWidget {
-   @override
+  @override
   Widget build(BuildContext context) {
-    return Scaffold (
-      appBar: AppBar (
+    return Scaffold(
+      appBar: AppBar(
         title: Text(
           'my first app',
         ),
@@ -19,15 +17,16 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.green[800],
       ),
       body: Center(
-        child: FlatButton(
-          onPressed: (){
-            print('You Clicked Me');
-          },
-          child: Text('Click Me'),
-          color: Colors.green[800],
-          textColor: Colors.white,
-        )
-      ),
+          child: RaisedButton.icon(
+            onPressed: () {},
+            icon: Icon(
+              Icons.mail_outline,
+              color: Colors.white,
+            ),
+            label: Text('Mail me'),
+            color: Colors.amber,
+            textColor: Colors.white,
+      )),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: Text('click'),
@@ -36,4 +35,3 @@ class Home extends StatelessWidget {
     );
   }
 }
-
