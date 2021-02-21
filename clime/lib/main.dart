@@ -10,44 +10,77 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[900],
       appBar: AppBar(
         title: Text(
-          'my first app',
+          'Ninja ID card',
         ),
         centerTitle: true,
-        backgroundColor: Colors.green[800],
+        elevation: 0,
+        backgroundColor: Colors.grey[850],
       ),
-      body: Row(
-        children: <Widget>[
-          Expanded(
-            flex:5,
-            child: Image.asset("images/Space.jpg"),
-          ),
-          Expanded(
-            flex: 3,
-            child: Container(
-              padding: EdgeInsets.all(20),
-              color: Colors.cyan,
-              child: Text('1'),
+      body: Padding(
+        padding: EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage('images/Space.jpg'),
+                radius: 50,
+              ),
             ),
-          ),
-          Expanded(
-            flex: 2,
-            child: Container(
-              padding: EdgeInsets.all(20),
-              color: Colors.pinkAccent,
-              child: Text('2'),
+            SizedBox(height: 90),
+            Container(
+              child: Text(
+                'NAME',
+                style: TextStyle(color: Colors.grey),
+              ),
             ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              padding: EdgeInsets.all(20),
-              color: Colors.amber,
-              child: Text('3'),
+            SizedBox(height: 15),
+            Container(
+              child: Text(
+                'Chun-Li',
+                style: TextStyle(
+                    color: Colors.amber,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20),
+              ),
             ),
-          ),
-        ],
+              SizedBox(height: 15),
+            Container(
+              child: Text(
+                'CURRENT NINJA LEVEL',
+                style: TextStyle(color: Colors.grey),
+              ),
+            ),
+            SizedBox(height: 15),
+            Container(
+              child: Text(
+                '8',
+                style: TextStyle(
+                    color: Colors.amber,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+            SizedBox(height: 10),
+            Container(
+              child: Row(
+                children: <Widget>[
+                  Icon(
+                    Icons.mail_rounded,
+                    color: Colors.grey[700],
+                  ),
+                  Text(
+                    'abc.com',
+                    style: TextStyle(color: Colors.grey[700]),
+                  )
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
