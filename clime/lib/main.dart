@@ -21,6 +21,35 @@ class _HomeState extends State<Home> {
     Quote(text: "People should find happiness in the little things, like family.", author: "DJ kaddu")
   ];
 
+  Widget quoteTemplate(quote){
+    return Card(
+      margin: EdgeInsets.fromLTRB(16.0,16.0,16.0,0),
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Text(
+              quote.text,
+              style: TextStyle(
+                fontSize: 18.0,
+                color: Colors.grey[600]
+              ),
+            ),
+            SizedBox(),
+            Text(
+              quote.author,
+              style: TextStyle(
+                  fontSize: 14.0,
+                  color: Colors.grey[800]
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +63,7 @@ class _HomeState extends State<Home> {
         backgroundColor: Colors.redAccent,
       ),
       body: Column(
-        children: quotes.map((quote)=> Text('${quote.text} - ${quote.author}')).toList(),
+        children: quotes.map((quote)=> quoteTemplate(quote)).toList(),
       ),
     );
   }
