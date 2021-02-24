@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import './src/screens/home.dart';
+import './src/screens/quote.dart';
 
 void main() {
   runApp(MaterialApp(home: Home()));
@@ -14,10 +15,10 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int ninjaLevel = 0;
 
-  List<String> quotes = [
-    "The true secret of happiness lies in the taking a genuine interest in all the details of daily life",
-    "The greatest happiness you can have is knowing that you do not necessarily require happiness.",
-    "People should find happiness in the little things, like family."
+  List<Quote> quotes = [
+    Quote(text:"The true secret of happiness lies in the taking a genuine interest in all the details of daily life", author: "Jyoti Singh" ),
+    Quote(author: 'J willson', text: "The greatest happiness you can have is knowing that you do not necessarily require happiness."),
+    Quote(text: "People should find happiness in the little things, like family.", author: "DJ kaddu")
   ];
 
   @override
@@ -33,7 +34,7 @@ class _HomeState extends State<Home> {
         backgroundColor: Colors.redAccent,
       ),
       body: Column(
-        children: quotes.map((quote)=> Text(quote)).toList(),
+        children: quotes.map((quote)=> Text('${quote.text} - ${quote.author}')).toList(),
       ),
     );
   }
