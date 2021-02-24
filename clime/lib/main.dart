@@ -12,94 +12,29 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
   int ninjaLevel = 0;
+
+  List<String> quotes = [
+    "The true secret of happiness lies in the taking a genuine interest in all the details of daily life",
+    "The greatest happiness you can have is knowing that you do not necessarily require happiness.",
+    "People should find happiness in the little things, like family."
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[900],
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
         title: Text(
           'Ninja ID card',
         ),
         centerTitle: true,
         elevation: 0,
-        backgroundColor: Colors.grey[850],
+        backgroundColor: Colors.redAccent,
       ),
-      body: Padding(
-        padding: EdgeInsets.all(20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Center(
-              child: CircleAvatar(
-                backgroundImage: AssetImage('images/Space.jpg'),
-                radius: 50,
-              ),
-            ),
-            SizedBox(height: 90),
-            Container(
-              child: Text(
-                'NAME',
-                style: TextStyle(color: Colors.grey),
-              ),
-            ),
-            SizedBox(height: 15),
-            Container(
-              child: Text(
-                'Chun-Li',
-                style: TextStyle(
-                    color: Colors.amber,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20),
-              ),
-            ),
-              SizedBox(height: 15),
-            Container(
-              child: Text(
-                'CURRENT NINJA LEVEL',
-                style: TextStyle(color: Colors.grey),
-              ),
-            ),
-            SizedBox(height: 15),
-            Container(
-              child: Text(
-                '$ninjaLevel',
-                style: TextStyle(
-                    color: Colors.amber,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold),
-              ),
-            ),
-            SizedBox(height: 10),
-            Container(
-              child: Row(
-                children: <Widget>[
-                  Icon(
-                    Icons.mail_rounded,
-                    color: Colors.grey[700],
-                  ),
-                  Text(
-                    'abc.com',
-                    style: TextStyle(color: Colors.grey[700]),
-                  )
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            ninjaLevel += 1;
-          });
-        },
-        child: Icon(Icons.add),
-        backgroundColor: Colors.green[800],
+      body: Column(
+        children: quotes.map((quote)=> Text(quote)).toList(),
       ),
     );
   }
 }
-
